@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>apes</title>
+</head>
+<body>
+{{ string }}
+{% for i in Tutorial %}
+    {{ i }}
+    <br>
+{% endfor %}
+<br>
+站点：{{ info_dict.site }} 内容:{{ info_dict.content }}
+{% for item in list %}
+    {{ item }}{% if not forloop.last %},{% endif %}
+{% endfor %}
+
+<br>
+{% if request.user.is_authenticated %}
+    {{ request.user.username }},您好!
+{% else %}
+    请登录
+{% endif %}
+
+{{ request.path }}
+{{ request.GET.urlencode }}
+</body>
+</html>
